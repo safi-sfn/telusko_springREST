@@ -28,14 +28,18 @@ public class TicketController {
 	}
 	@GetMapping("/get-ticket")
 	public String getTicketForm(@RequestParam("ticketNumber") int ticketNumber, Model model) {
-		Ticket ticket = service.generateTicket(ticketNumber);
+//		Ticket ticket = service.generateTicket(ticketNumber);
+		
+		Ticket ticket = new Ticket(234908,"Confirmed",1785.6,"Mohit Kumar", "Mumbai","Delhi","16th Nov");
 		model.addAttribute("ticket", ticket);
 		return "ticket-info";
 	}
 	
 	@PostMapping("/book-ticket")
 	public String bookTicket(@ModelAttribute Passenger passenger, Model model) {
-		int ticketNumber = service.registerPassenger(passenger);
+//		int ticketNumber = service.registerPassenger(passenger);
+		
+		int ticketNumber = 278965;
 		model.addAttribute("ticketNumber", ticketNumber);
 		return "index";
 		
