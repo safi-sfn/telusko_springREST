@@ -10,12 +10,15 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public int registerPassenger(Passenger passenger) {
+		// RestTemplate  or // WebClient
 		
 		return 0;
 	}
 
 	@Override
 	public Ticket generateTicket(int ticketNumber) {
+		
+		// RestTemplate  or // WebClient
 		
 		return null;
 	}
