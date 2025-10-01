@@ -14,6 +14,7 @@ public class KafkaService {
 	private KafkaTemplate<String, Customer> kafkaTemplate;
 	
 	public String addCxMsg(Customer cx) {
+		
 		kafkaTemplate.send(AppConstant.TOPIC_NAME, cx);
 		return "Customer Data added in kafka Server";
 	}
