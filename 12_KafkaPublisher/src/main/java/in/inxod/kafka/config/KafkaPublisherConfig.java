@@ -19,18 +19,17 @@ import in.inxod.kafka.util.AppConstant;
 public class KafkaPublisherConfig {
 
 	@Bean
-	public ProducerFactory<String, Customer> producerFactory(){
+	public ProducerFactory<String, Customer> producerFactory() {
 		Map<String, Object> configProps = new HashMap<>();
 		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, AppConstant.HOST_URL);
 		configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-		
+
 		return new DefaultKafkaProducerFactory<>(configProps);
 	}
-	
+
 	@Bean
-	public KafkaTemplate<String, Customer> kafkaTemplate()
-	{
-		return new KafkaTemplate<String,Customer>(producerFactory());
+	public KafkaTemplate<String, Customer> kafkaTemplate() {
+		return new KafkaTemplate<String, Customer>(producerFactory());
 	}
 }
