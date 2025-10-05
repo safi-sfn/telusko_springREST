@@ -16,6 +16,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 
+//@RestController indicates this class handles HTTP requests and returns JSON responses
+//@Tag provides API documentation details for Swagger/OpenAPI
 @RestController
 @Tag(name="Ticket Booking API Controller", description="This API will Store Passenger Info and Generate Ticket")
 public class TicketController {
@@ -23,6 +25,7 @@ public class TicketController {
 	@Autowired
 	private TicketService service;
 	
+// @Operation provides detailed documentation for this specific endpoint
 	@PostMapping("/get-ticketNumber")
 	@Operation(summary="POST Operation", description="This API method will receive Passenger Type Data and Generate Ticket Number")
 	public ResponseEntity<Integer> generateTicketNumber(@RequestBody Passenger passenger){
